@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var saveitems= function(){
 	var body = document.querySelectorAll("input");
-	for(var i = 0; i < body.length; i++){
+	var answersLength=body.length-41;
+	for(var i = 0; i < answersLength; i++){
 		localStorage.setItem(json['questionLabels'][i], body[i].value);
 		ans.innerHTML += '<h2>' + json['questionLabels'][i] + ": " + body[i].value + '</h2>';
 		el.innerHTML = "";
