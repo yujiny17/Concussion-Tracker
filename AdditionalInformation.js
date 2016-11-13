@@ -49,9 +49,6 @@ for(var i=0;i<questionsLength;i++){
 
 	var answersLength= json["questions"][i].answers.length;
 	for(var j=0;j<answersLength;j++){
-		/*if(json["questions"][i].answers[j]=="Other:"||json["questions"][i].answers[j]=="Other, please specify:"||json["questions"][i].type=="response"){
-			questionsText+=json['questions'][i].answers[j]+"<input type='text'>";
-		}*/
 		if(json["questions"][i].answerType[j]=="text"){
 			questionsText+=json['questions'][i].answers[j]+"<input type='text'>";
 		}
@@ -76,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 var saveitems= function(){
 	var body = document.querySelectorAll("input");
 	console.log(body.length);
-	var answerCount=8;
+	var answerCount=0;
 	for(var i=0; i<json['questions'].length; i++){
 		for(var j=0; j<json['questions'][i].answers.length; j++){
 			if(json["questions"][i].answerType[j]=="text"){
@@ -89,12 +86,12 @@ var saveitems= function(){
 			}
 		}
 	}
-	console.log(localStorage.getItem(json["questions"][1].userInput[1]));
+	console.log(localStorage.getItem(json["questions"][1].userInput[1].checked));
 
 }
 
 	/*
-	for(var i = 8; i < body.length; i++){
+	for(var i = 0; i < body.length; i++){
 		console.log(body[i]);
 		
 		if(body[i].type=="text"){
@@ -117,7 +114,7 @@ var saveitems= function(){
 /*
 
 
-	for(var i = 8; i < body.length; i++){
+	for(var i = 0; i < body.length; i++){
 		if(typeof body[i]=="stringValue"){
 			console.log(body[i].value);
 			localStorage.setItem(json['questions'][i].answers[i], body[i].value);
