@@ -5,32 +5,38 @@ var json={
 			"text": "What sports do you play?",
 			"answers": ["Football", "Baseball", "Softball", "Basketball", "Lacrosse", "Hockey", "Rugby", "Soccer", "Cycling", "Gymnastics", "Other:"],
 			"answerType": ["checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "text"],
-			"userInput":[" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+			//"userInput":[" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+			"userInput":["1","2","3","4","5","6","7","8","9","10","11"]
 		}, {
 			"text": "What sports have you played in the past?",
 			"answers": ["Football", "Baseball", "Softball", "Basketball", "Lacrosse", "Hockey", "Rugby", "Soccer", "Cycling", "Gymnastics", "Other:"],
 			"answerType": ["checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "text"],
-			"userInput":[" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+			//"userInput":[" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+			"userInput":["12","13","14","15","16","17","18","19","20","21","22"]
 		}, {
 			"text": "Race:",
 			"answers": ["Alaskan/American Indian", "Asian/Pacific Islander", "Black, not Hispanic", "Hispanic", "Caucasian", "Other, please specify:"],
 			"answerType": ["checkbox", "checkbox", "checkbox", "checkbox", "checkbox", "text"],
-			"userInput":[" ", " ", " ", " ", " ", " "]
+			//"userInput":[" ", " ", " ", " ", " ", " "]
+			"userInput":["23","24","25","26","27","28"]
 		}, {
 			"text": "Marital Status:",
 			"answers": ["Single, never married", "Married or in a domestic partnership", "Divorced", "Separated", "Widowed"],
 			"answerType":["checkbox","checkbox","checkbox","checkbox","checkbox"],
-			"userInput":[" ", " ", " ", " ", " "]
+			//"userInput":[" ", " ", " ", " ", " "]
+			"userInput":["29","30","31","32","33"]
 		}, {
 			"text": "Highest Level of Education:",
 			"answers": ["No high school", "Some high school, no diploma", "High school diploma", "Associate's degree", "Bachelor's degree", "Master's degree", "MD/DO"],
 			"answerType":["checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"],
-			"userInput":[" ", " ", " ", " ", " ", " ", " "]
+			//"userInput":[" ", " ", " ", " ", " ", " ", " "]
+			"userInput":["34","35","36","37","38","39","40"]
 		}, {
 			"text": "Is there anything you would like us to know about your concussion or concussion recovery?",
 			"answers":[""],
 			"answerType":["text"],
-			"userInput":[" "]
+			//"userInput":[" "]
+			"userInput":["41"]
 		}
 	]
 }
