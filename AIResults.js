@@ -34,9 +34,8 @@ var json={
 		}
 	]
 }
-
 var el=document.getElementById("header2");
-el.innerHTML="<h1>"+json["title"]+"</h1>";
+el.innerHTML="<h1>"+json["title"]+" Results"+"</h1>";
 
 
 var q=document.getElementById("questions2");
@@ -46,14 +45,21 @@ for(var i=0;i<questionsLength;i++){
 	var questionsText="";
 	questionsText+="<h2>"+json["questions"][i].text+"<h2>";
 
-
 	var answersLength= json["questions"][i].answers.length;
 	for(var j=0;j<answersLength;j++){
 		if(json["questions"][i].answerType[j]=="text"){
-			questionsText+=json['questions'][i].answers[j]+"<input type='text'>";
+			questionsText+="<h2>"+localStorage.getItem(json["questions"][i].userInput[j])+"</h2>";
 		}
-		else{
-			questionsText+=json['questions'][i].answers[j]+"<input type='checkbox'>";
+		else if(json["questions"][i].answerType[j]=="checkbox"){
+			questionsText+="<input type='checkbox' disabled =''"; 
+
+			if(localStorage.getItem(json["questions"][i].userInput[j])=="true"){
+				questionsText+=" checked >"+json["questions"][i].answers[j];
+			}
+			else{
+				questionsText+=">"+json["questions"][i].answers[j];
+			}
+		
 		}
 	}
 	
@@ -62,69 +68,12 @@ for(var i=0;i<questionsLength;i++){
 	
 }
 
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-	document.getElementById('submit').addEventListener('click', saveitems);
-});
-
-
-var saveitems= function(){
-	var body = document.querySelectorAll("input");
-	console.log(body.length);
-	var answerCount=0;
-	for(var i=0; i<json['questions'].length; i++){
-		for(var j=0; j<json['questions'][i].answers.length; j++){
-			if(json["questions"][i].answerType[j]=="text"){
-				localStorage.setItem(json['questions'][i].userInput[j], body[answerCount].value);
-			}
-			else if (json["questions"][i].answerType[j]=="checkbox"){
-				localStorage.setItem(json['questions'][i].userInput[j], body[answerCount].checked);
-			}
-			answerCount++;
-
-		}
-	}
-	console.log(localStorage.getItem(json["questions"][1].userInput[1]));
-
-}
-
-	/*
-	for(var i = 0; i < body.length; i++){
-		console.log(body[i]);
-		
-		if(body[i].type=="text"){
-			localStorage.setItem(json['questions'][i].userInput, body[i].value);
-		}
-		else if (body[i].type=="checkbox"){
-			localStorage.setItem(json['questions'][i].userInput, body[i].checked);
-		}
-		else{
-			localStorage.setItem(json['questions'][i].userInput, body[i].value)
-
-		}
-		
-	} 
-	*/
+	console.log(localStorage.getItem(json["questions"][1].userInput[1].checked));
 
 
 
 
-/*
 
-
-	for(var i = 0; i < body.length; i++){
-		if(typeof body[i]=="stringValue"){
-			console.log(body[i].value);
-			localStorage.setItem(json['questions'][i].answers[i], body[i].value);
-		}
-		else if(typeof body[i]=="checkbox"){
-			localStorage.setItem(json['questions'][i].answers[i], body[i].checked);
-		}
-
-*/
-	
 
 
 
