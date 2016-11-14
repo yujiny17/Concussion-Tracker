@@ -41,19 +41,22 @@ el.innerHTML="<h1>"+json["title"]+" Results"+"</h1>";
 var q=document.getElementById("questions2");
 var questionsLength= json["questions"].length;
 
+var questionsText="";
+
+
 for(var i=0;i<questionsLength;i++){
-	var questionsText="";
 	questionsText+="<h2>"+json["questions"][i].text+"<h2>";
 
 	var answersLength= json["questions"][i].answers.length;
 	for(var j=0;j<answersLength;j++){
 		if(json["questions"][i].answerType[j]=="text"){
-			questionsText+="<h2>"+JSON.parse(localStorage.getItem(json["questions"][i].userInput[j]))+"</h2>";
+			questionsText+="<h2>"+localStorage.getItem(json["questions"][i].userInput[j])+"</h2>";
 		}
 		else if(json["questions"][i].answerType[j]=="checkbox"){
 			questionsText+="<input type='checkbox' disabled =''"; 
 
-			if(JSON.parse(localStorage.getItem(json["questions"][i].userInput[j]))=="true"){
+
+			if(localStorage.getItem(json["questions"][i].userInput[j])=="true"){
 				questionsText+=" checked >"+json["questions"][i].answers[j];
 			}
 			else{
@@ -62,11 +65,10 @@ for(var i=0;i<questionsLength;i++){
 		
 		}
 	}
-	
 
-	q.innerHTML+="<h2>"+ questionsText+'</h2>';
-	
 }
+q.innerHTML+="<h2>"+ questionsText+'</h2>'
+console.log(localStorage.getItem(json["questions"][1].userInput[10]));
 
 
 
