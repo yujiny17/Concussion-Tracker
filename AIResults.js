@@ -58,14 +58,12 @@ for(var i=0; i<questionsLength; i++){
 		if(json["questions"][i].answerType[j]=="text"){
 			questionsText+="<h2>"+localStorage.getItem("id: "+json["questions"][i].userInput[j])+"</h2>";
 		}
-		else if(json["questions"][i].answerType[j]=="checkbox"){
-			questionsText+="<input type='checkbox' disabled =''"; 
-
-			if(localStorage.getItem("id: "+json["questions"][i].userInput[j])==true){
-				questionsText+=" checked >"+json["questions"][i].answers[j];
+		else if(json["questions"][i].answerType[j]=="checkbox"){ 
+			if(localStorage.getItem("id: "+json["questions"][i].userInput[j])=="true"){
+				questionsText+="<input type='checkbox' disabled ='' checked >"+json["questions"][i].answers[j];
 			}
 			else{
-				questionsText+=">"+json["questions"][i].answers[j];
+				questionsText+="<input type='checkbox' disabled =''>"+json["questions"][i].answers[j];
 			}
 		
 		}

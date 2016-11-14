@@ -97,42 +97,6 @@ var saveitems= function(){
 
 }
 
-	/*
-	for(var i = 0; i < body.length; i++){
-		console.log(body[i]);
-		
-		if(body[i].type=="text"){
-			localStorage.setItem(json['questions'][i].userInput, body[i].value);
-		}
-		else if (body[i].type=="checkbox"){
-			localStorage.setItem(json['questions'][i].userInput, body[i].checked);
-		}
-		else{
-			localStorage.setItem(json['questions'][i].userInput, body[i].value)
-
-		}
-		
-	} 
-	*/
-
-
-
-
-/*
-
-
-	for(var i = 0; i < body.length; i++){
-		if(typeof body[i]=="stringValue"){
-			console.log(body[i].value);
-			localStorage.setItem(json['questions'][i].answers[i], body[i].value);
-		}
-		else if(typeof body[i]=="checkbox"){
-			localStorage.setItem(json['questions'][i].answers[i], body[i].checked);
-		}
-
-*/
-	
-
 
 
 
