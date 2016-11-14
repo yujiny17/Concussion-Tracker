@@ -50,7 +50,7 @@ var questionsLength= json["questions"].length;
  
 for(var i=0;i<questionsLength;i++){
 	var questionsText="";
-	questionsText+="<h2>"+json["questions"][i].text+"<h2>";
+	questionsText+="<h2>"+json["questions"][i].text+"<h2> <h3>";
 
 
 	var answersLength= json["questions"][i].answers.length;
@@ -63,8 +63,8 @@ for(var i=0;i<questionsLength;i++){
 		}
 	}
 	
-
-	q.innerHTML+="<h2>"+ questionsText+'</h2>';
+	questionsText+="</h3"
+	q.innerHTML+=questionsText;
 	
 }
 

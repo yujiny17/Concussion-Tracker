@@ -1,11 +1,16 @@
 h1{
 	
 	line-height:1.5;
-	font-size:20;
+	font-size:30;
 }
 
 h2{
 
+	font-size:20;
+
+}
+
+h3{
 	font-size:15;
 
 }

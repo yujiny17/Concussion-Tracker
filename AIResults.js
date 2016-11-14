@@ -51,26 +51,26 @@ var questionsText="";
 
 
 for(var i=0; i<questionsLength; i++){
-	questionsText+="<h2>"+json["questions"][i].text+"<h2>";
+	questionsText+="<h2>"+json["questions"][i].text+"<h2><h3>";
 
 	var answersLength= json["questions"][i].answers.length;
 	for(var j=0; j<answersLength; j++){
 		if(json["questions"][i].answerType[j]=="text"){
-			questionsText+="<h2>"+localStorage.getItem("id: "+json["questions"][i].userInput[j])+"</h2>";
+			questionsText+=" "+localStorage.getItem("id: "+json["questions"][i].userInput[j]);
 		}
 		else if(json["questions"][i].answerType[j]=="checkbox"){ 
 			if(localStorage.getItem("id: "+json["questions"][i].userInput[j])=="true"){
-				questionsText+="<input type='checkbox' disabled ='' checked >"+json["questions"][i].answers[j];
+				questionsText+=json["questions"][i].answers[j]+"<input type='checkbox' disabled ='' checked >";
 			}
 			else{
-				questionsText+="<input type='checkbox' disabled =''>"+json["questions"][i].answers[j];
+				questionsText+=json["questions"][i].answers[j]+"<input type='checkbox' disabled =''>";
 			}
 		
 		}
 	}
-
+	questionsText+="</h3>"
 }
-q.innerHTML+="<h2>"+ questionsText+'</h2>'
+q.innerHTML+=questionsText
 console.log(localStorage.getItem(json["questions"][1].userInput[10]));
 
 
