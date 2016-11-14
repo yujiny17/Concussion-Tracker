@@ -1,5 +1,5 @@
 var json={
-	"title": "additionalInformation",
+	"title": "Additional Information",
 	"questions": [
 		{
 			"text": "What sports do you play?",
@@ -30,7 +30,7 @@ var json={
 			"text": "Is there anything you would like us to know about your concussion or concussion recovery?",
 			"answers":[""],
 			"answerType":["text"],
-			"userInput":" "
+			"userInput":[" "]
 		}
 	]
 }
@@ -76,17 +76,19 @@ var saveitems= function(){
 	var answerCount=0;
 	for(var i=0; i<json['questions'].length; i++){
 		for(var j=0; j<json['questions'][i].answers.length; j++){
-			if(json["questions"][i].answerType[j]=="text"){
-				localStorage.setItem(json['questions'][i].userInput[j], body[answerCount].value);
+			if(json["questions"][i].answerType[j]==="text"){
+				localStorage.setItem(json["questions"][i].userInput[j], body[answerCount].value);
+				console.log(body[answerCount].value);
+
 			}
-			else if (json["questions"][i].answerType[j]=="checkbox"){
+			else if (json["questions"][i].answerType[j]==="checkbox"){
 				localStorage.setItem(json['questions'][i].userInput[j], body[answerCount].checked);
+				console.log(body[answerCount].checked);
+
 			}
 			answerCount++;
-
 		}
 	}
-	console.log(localStorage.getItem(json["questions"][1].userInput[1]));
 
 }
 

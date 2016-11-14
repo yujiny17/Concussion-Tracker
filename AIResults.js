@@ -1,5 +1,5 @@
 var json={
-	"title": "additionalInformation",
+	"title": "Additional Information",
 	"questions": [
 		{
 			"text": "What sports do you play?",
@@ -30,7 +30,7 @@ var json={
 			"text": "Is there anything you would like us to know about your concussion or concussion recovery?",
 			"answers":[""],
 			"answerType":["text"],
-			"userInput":" "
+			"userInput":[" "]
 		}
 	]
 }
@@ -48,12 +48,12 @@ for(var i=0;i<questionsLength;i++){
 	var answersLength= json["questions"][i].answers.length;
 	for(var j=0;j<answersLength;j++){
 		if(json["questions"][i].answerType[j]=="text"){
-			questionsText+="<h2>"+localStorage.getItem(json["questions"][i].userInput[j])+"</h2>";
+			questionsText+="<h2>"+JSON.parse(localStorage.getItem(json["questions"][i].userInput[j]))+"</h2>";
 		}
 		else if(json["questions"][i].answerType[j]=="checkbox"){
 			questionsText+="<input type='checkbox' disabled =''"; 
 
-			if(localStorage.getItem(json["questions"][i].userInput[j])=="true"){
+			if(JSON.parse(localStorage.getItem(json["questions"][i].userInput[j]))=="true"){
 				questionsText+=" checked >"+json["questions"][i].answers[j];
 			}
 			else{
@@ -67,8 +67,6 @@ for(var i=0;i<questionsLength;i++){
 	q.innerHTML+="<h2>"+ questionsText+'</h2>';
 	
 }
-
-	console.log(localStorage.getItem(json["questions"][1].userInput[1].checked));
 
 
 
