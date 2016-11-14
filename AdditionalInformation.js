@@ -83,12 +83,12 @@ var saveitems= function(){
 	for(var i=0; i<json['questions'].length; i++){
 		for(var j=0; j<json['questions'][i].answers.length; j++){
 			if(json["questions"][i].answerType[j]==="text"){
-				localStorage.setItem(json["questions"][i].userInput[j], body[answerCount].value);
+				localStorage.setItem("id"+json["questions"][i].userInput[j], body[answerCount].value);
 				console.log(localStorage.getItem(json['questions'][i].userInput[j])+" "+body[answerCount].value);
 
 			}
 			else if (json["questions"][i].answerType[j]==="checkbox"){
-				localStorage.setItem(json['questions'][i].userInput[j], body[answerCount].checked);
+				localStorage.setItem("id"+json['questions'][i].userInput[j], body[answerCount].checked);
 				console.log(localStorage.getItem(json['questions'][i].userInput[j])+body[answerCount].checked);
 
 			}
