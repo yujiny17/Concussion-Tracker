@@ -47,7 +47,7 @@ el.innerHTML="<h1>"+json["title"]+"</h1>";
 
 var q=document.getElementById("questions2");
 var questionsLength= json["questions"].length;
-
+ 
 for(var i=0;i<questionsLength;i++){
 	var questionsText="";
 	questionsText+="<h2>"+json["questions"][i].text+"<h2>";
@@ -70,7 +70,6 @@ for(var i=0;i<questionsLength;i++){
 
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('submit').addEventListener('click', saveitems);
 });
@@ -80,16 +79,16 @@ var saveitems= function(){
 	var body = document.querySelectorAll("input");
 	console.log(body.length);
 	var answerCount=0;
-	for(var i=0; i<json['questions'].length; i++){
-		for(var j=0; j<json['questions'][i].answers.length; j++){
+	for(var i=0; i<json["questions"].length; i++){
+		for(var j=0; j<json["questions"][i].answers.length; j++){
 			if(json["questions"][i].answerType[j]==="text"){
-				localStorage.setItem("id"+json["questions"][i].userInput[j], body[answerCount].value);
-				console.log(localStorage.getItem(json['questions'][i].userInput[j])+" "+body[answerCount].value);
+				localStorage.setItem("id: "+json["questions"][i].userInput[j], body[answerCount].value);
+				console.log(localStorage.getItem("id: "+json['questions'][i].userInput[j])+" "+body[answerCount].value);
 
 			}
 			else if (json["questions"][i].answerType[j]==="checkbox"){
-				localStorage.setItem("id"+json['questions'][i].userInput[j], body[answerCount].checked);
-				console.log(localStorage.getItem(json['questions'][i].userInput[j])+body[answerCount].checked);
+				localStorage.setItem("id: "+json["questions"][i].userInput[j], body[answerCount].checked);
+				console.log(localStorage.getItem("id: "+json["questions"][i].userInput[j])+body[answerCount].checked);
 
 			}
 			answerCount++;
